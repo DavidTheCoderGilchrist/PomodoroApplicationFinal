@@ -1,0 +1,74 @@
+﻿@model Pomodoro.Models.Achievement.AchievementDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AchievementDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AchievementId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AchievementId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AchievementName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AchievementName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalCompletes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalCompletes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PointsToUnlock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PointsToUnlock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsUnlocked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsUnlocked)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

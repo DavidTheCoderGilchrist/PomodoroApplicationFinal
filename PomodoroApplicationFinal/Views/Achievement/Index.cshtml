@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Pomodoro.Models.Achievement.AchievementListItem>
+
+@{
+    ViewBag.Title = "Achievements";
+}
+
+<h2>Index</h2>
+
+
+<table class="table table-striped table-hover">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.AchievementId)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.AchievementName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalCompletes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PointsToUnlock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsUnlocked)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.AchievementId)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.AchievementName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalCompletes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PointsToUnlock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsUnlocked)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.AchievementId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.AchievementId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.AchievementId })
+        </td>
+    </tr>
+}
+
+</table>
+
+<p>
+    @Html.ActionLink("New Achievement", "Create", null, new { @class = "btn-lg btn-default" })
+    @*@Html.ActionLink("Create New Task", "Create")*@
+</p>

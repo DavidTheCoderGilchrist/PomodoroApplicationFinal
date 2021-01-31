@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Pomodoro.Models.Reward.RewardListItem>
+
+@{
+    ViewBag.Title = "Rewards";
+}
+
+<h2>Index</h2>
+
+
+<table class="table table-striped table-hover">
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.RewardId)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.RewardName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PointCost)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.RewardId)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.RewardName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PointCost)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.RewardId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.RewardId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.RewardId })
+        </td>
+    </tr>
+}
+
+</table>
+
+<p>
+    @Html.ActionLink("New Task", "Create", null, new { @class = "btn-lg btn-default" })
+    @*@Html.ActionLink("Create New Task", "Create")*@
+</p>

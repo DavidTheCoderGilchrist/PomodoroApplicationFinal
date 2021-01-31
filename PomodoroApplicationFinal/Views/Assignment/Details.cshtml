@@ -1,0 +1,52 @@
+﻿@model Pomodoro.Models.AssignmentDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AssignmentDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignmentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignmentId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignmentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Points)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Points)
+        </dd>
+
+    </dl>
+</div>
+<p>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AssignmentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
