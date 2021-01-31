@@ -10,7 +10,6 @@ namespace Pomodoro.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Pomodoro.Data.ApplicationDbContext";
         }
 
         protected override void Seed(Pomodoro.Data.ApplicationDbContext context)

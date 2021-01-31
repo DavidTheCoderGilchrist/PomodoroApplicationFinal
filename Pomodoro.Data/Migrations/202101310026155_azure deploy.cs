@@ -3,20 +3,48 @@ namespace Pomodoro.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class azuredeploy : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Achievement",
+                c => new
+                    {
+                        AchievementId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        AchievementName = c.String(),
+                        Description = c.String(),
+                        TotalCompletes = c.Int(nullable: false),
+                        PointsToUnlock = c.Int(nullable: false),
+                        IsUnlocked = c.Boolean(nullable: false),
+                        Message = c.String(),
+                    })
+                .PrimaryKey(t => t.AchievementId);
+            
             CreateTable(
                 "dbo.Assignment",
                 c => new
                     {
                         AssignmentId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
                         AssignmentName = c.String(),
                         Description = c.String(),
                         Points = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.AssignmentId);
+            
+            CreateTable(
+                "dbo.Reward",
+                c => new
+                    {
+                        RewardId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        RewardName = c.String(),
+                        Description = c.String(),
+                        PointCost = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.RewardId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -105,7 +133,9 @@ namespace Pomodoro.Data.Migrations
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Reward");
             DropTable("dbo.Assignment");
+            DropTable("dbo.Achievement");
         }
     }
 }

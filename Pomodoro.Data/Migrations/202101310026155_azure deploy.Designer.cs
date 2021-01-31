@@ -7,13 +7,13 @@ namespace Pomodoro.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class azuredeploy : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(azuredeploy));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101300357351_InitialCreate"; }
+            get { return "202101310026155_azure deploy"; }
         }
         
         string IMigrationMetadata.Source

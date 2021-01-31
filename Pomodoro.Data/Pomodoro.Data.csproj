@@ -57,25 +57,9 @@
     <Compile Include="Achievement.cs" />
     <Compile Include="Assignment.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202101300357351_InitialCreate.cs" />
-    <Compile Include="Migrations\202101300357351_InitialCreate.Designer.cs">
-      <DependentUpon>202101300357351_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101300401207_InitialMigration.cs" />
-    <Compile Include="Migrations\202101300401207_InitialMigration.Designer.cs">
-      <DependentUpon>202101300401207_InitialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101301950547_second add.cs" />
-    <Compile Include="Migrations\202101301950547_second add.Designer.cs">
-      <DependentUpon>202101301950547_second add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101302258303_fourth add.cs" />
-    <Compile Include="Migrations\202101302258303_fourth add.Designer.cs">
-      <DependentUpon>202101302258303_fourth add.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101302333312_fifth add.cs" />
-    <Compile Include="Migrations\202101302333312_fifth add.Designer.cs">
-      <DependentUpon>202101302333312_fifth add.cs</DependentUpon>
+    <Compile Include="Migrations\202101310026155_azure deploy.cs" />
+    <Compile Include="Migrations\202101310026155_azure deploy.Designer.cs">
+      <DependentUpon>202101310026155_azure deploy.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,20 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101300357351_InitialCreate.resx">
-      <DependentUpon>202101300357351_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101300401207_InitialMigration.resx">
-      <DependentUpon>202101300401207_InitialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101301950547_second add.resx">
-      <DependentUpon>202101301950547_second add.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101302258303_fourth add.resx">
-      <DependentUpon>202101302258303_fourth add.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101302333312_fifth add.resx">
-      <DependentUpon>202101302333312_fifth add.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101310026155_azure deploy.resx">
+      <DependentUpon>202101310026155_azure deploy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
