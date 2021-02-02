@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Pomodoro.Contracts;
 using Pomodoro.Models.Reward;
 using Pomodoro.Services;
 using System;
@@ -12,6 +13,13 @@ namespace PomodoroApplicationFinal.Controllers
     [Authorize]
     public class RewardController : Controller
     {
+        private readonly IRewardService _rewardService;
+
+        public RewardController(IRewardService rewardService)
+        {
+            _rewardService = rewardService;
+        }
+
         // GET: Reward
         public ActionResult Index()
         {
@@ -97,10 +105,20 @@ namespace PomodoroApplicationFinal.Controllers
             return View(model);
         }
 
+        
+        public ActionResult Delete(int id)
+        {
+
+            var svc = CreateRewardService();
+            var model = svc.GetRewardById(id);
+
+            return View(model);
+        }
+
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public ActionResult DeletePost(int id)
         {
             var service = CreateRewardService();
 
@@ -109,11 +127,6 @@ namespace PomodoroApplicationFinal.Controllers
             TempData["SaveResult"] = "Your note was deleted";
 
             return RedirectToAction("Index");
-
-            //var svc = CreateRewardService();
-            //var model = svc.GetRewardById(id);
-
-            //return View(model);
         }
 
         private RewardService CreateRewardService()

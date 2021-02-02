@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Pomodoro.Data;
+using Pomodoro.Data.Contexts;
+using Pomodoro.Data.Entities;
 using PomodoroApplicationFinal.Models;
 
 namespace PomodoroApplicationFinal

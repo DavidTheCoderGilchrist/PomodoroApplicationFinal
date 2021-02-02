@@ -1,4 +1,6 @@
-﻿using Pomodoro.Data;
+﻿using Pomodoro.Contracts;
+using Pomodoro.Data;
+using Pomodoro.Data.Contexts;
 using Pomodoro.Models;
 using Pomodoro.Models.Assignment;
 using System;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Pomodoro.Services
 {
-    public class AssignmentService
+    public class AssignmentService : IAssignmentService
     {
         private readonly Guid _userId;
 
@@ -17,6 +19,8 @@ namespace Pomodoro.Services
         {
             _userId = userId;
         }
+
+        public AssignmentService() { }
 
         public bool CreateAssignment(AssignmentCreate model)
         {
@@ -36,6 +40,8 @@ namespace Pomodoro.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        //Get all Assignments
 
         public IEnumerable<AssignmentListItem> GetAssignment()
         {

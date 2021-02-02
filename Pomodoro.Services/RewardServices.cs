@@ -1,4 +1,6 @@
-﻿using Pomodoro.Data;
+﻿using Pomodoro.Contracts;
+using Pomodoro.Data;
+using Pomodoro.Data.Contexts;
 using Pomodoro.Models.Reward;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 namespace Pomodoro.Services
 {
     
-    public class RewardService
+    public class RewardService : IRewardService
     {
         private readonly Guid _userId;
 
@@ -17,6 +19,8 @@ namespace Pomodoro.Services
         {
             _userId = userId;
         }
+
+        public RewardService() { }
 
         public bool CreateReward(RewardCreate model)
         {
@@ -97,14 +101,14 @@ namespace Pomodoro.Services
             }
         }
 
-        public bool DeleteReward(int assignmentId)
+        public bool DeleteReward(int rewardId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Rewards
-                        .Single(e => e.RewardId == assignmentId && e.OwnerId == _userId);
+                        .Single(e => e.RewardId == rewardId && e.OwnerId == _userId);
 
                 ctx.Rewards.Remove(entity);
 

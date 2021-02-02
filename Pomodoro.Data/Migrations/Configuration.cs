@@ -5,14 +5,14 @@ namespace Pomodoro.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Pomodoro.Data.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Pomodoro.Data.Contexts.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Pomodoro.Data.ApplicationDbContext context)
+        protected override void Seed(Pomodoro.Data.Contexts.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

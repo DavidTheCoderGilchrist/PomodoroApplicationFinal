@@ -1,4 +1,6 @@
-﻿using Pomodoro.Data;
+﻿using Pomodoro.Contracts;
+using Pomodoro.Data;
+using Pomodoro.Data.Contexts;
 using Pomodoro.Models.Achievement;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Pomodoro.Services
 {
-    public class AchievementServices
+    public class AchievementServices : IAchievementService
     {
         private readonly Guid _userId;
 
@@ -16,6 +18,9 @@ namespace Pomodoro.Services
         {
             _userId = userId;
         }
+
+        public AchievementServices() { }
+
 
         public bool CreateAchievement(AchievementCreate model)
         {

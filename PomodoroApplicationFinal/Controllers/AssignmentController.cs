@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Pomodoro.Contracts;
 using Pomodoro.Data;
 using Pomodoro.Models;
 using Pomodoro.Models.Assignment;
@@ -14,6 +15,13 @@ namespace PomodoroApplicationFinal.Controllers
     [Authorize]
     public class AssignmentController : Controller
     {
+        private readonly IAssignmentService _assignmentService;
+       
+                    
+        public AssignmentController(IAssignmentService assignmentService)
+        {
+            _assignmentService = assignmentService;
+        }
             // GET: Assignment
             public ActionResult Index()
             {
@@ -98,10 +106,19 @@ namespace PomodoroApplicationFinal.Controllers
             return View(model);
         }
 
+        public ActionResult Delete(int id)
+        {
+
+            var svc = CreateAssignmentService();
+            var model = svc.GetAssignmentById(id);
+
+            return View(model);
+        }
+
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public ActionResult DeletePost(int id)
         {
             var service = CreateAssignmentService();
 
@@ -110,13 +127,7 @@ namespace PomodoroApplicationFinal.Controllers
             TempData["SaveResult"] = "Your note was deleted";
 
             return RedirectToAction("Index");
-
-            //var svc = CreateAssignmentService();
-            //var model = svc.GetAssignmentById(id);
-
-            //return View(model);
         }
-
         private AssignmentService CreateAssignmentService()
             {
                 var userId = Guid.Parse(User.Identity.GetUserId());

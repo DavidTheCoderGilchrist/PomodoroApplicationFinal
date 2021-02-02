@@ -60,6 +60,10 @@
     <Compile Include="RewardServices.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Pomodoro.Contracts\Pomodoro.Contracts.csproj">
+      <Project>{5ed98c39-497f-4c46-a601-053fdcf369ea}</Project>
+      <Name>Pomodoro.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pomodoro.Data\Pomodoro.Data.csproj">
       <Project>{f397da96-fee9-45f4-ace0-13edbb036736}</Project>
       <Name>Pomodoro.Data</Name>
@@ -72,6 +76,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

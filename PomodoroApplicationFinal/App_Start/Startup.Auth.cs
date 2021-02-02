@@ -6,6 +6,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Pomodoro.Data;
+using Pomodoro.Data.Contexts;
+using Pomodoro.Data.Entities;
 
 namespace PomodoroApplicationFinal
 {

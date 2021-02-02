@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Pomodoro.Contracts;
 using Pomodoro.Models.Achievement;
 using Pomodoro.Services;
 using System;
@@ -12,6 +13,13 @@ namespace PomodoroApplicationFinal.Controllers
     [Authorize]
     public class AchievementController : Controller
     {
+        private readonly IAchievementService _achievementService;
+
+        public AchievementController(IAchievementService achievementService)
+        {
+            _achievementService = achievementService;
+        }
+
         // GET: Achievement
         public ActionResult Index()
         {
@@ -96,10 +104,19 @@ namespace PomodoroApplicationFinal.Controllers
             return View(model);
         }
 
+        public ActionResult Delete(int id)
+        {
+
+            var svc = CreateAchievementService();
+            var model = svc.GetAchievementById(id);
+
+            return View(model);
+        }
+
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public ActionResult DeletePost(int id)
         {
             var service = CreateAchievementService();
 
@@ -108,11 +125,6 @@ namespace PomodoroApplicationFinal.Controllers
             TempData["SaveResult"] = "Your note was deleted";
 
             return RedirectToAction("Index");
-
-            //var svc = CreateAchievementService();
-            //var model = svc.GetAchievementById(id);
-
-            //return View(model);
         }
 
         private AchievementServices CreateAchievementService()

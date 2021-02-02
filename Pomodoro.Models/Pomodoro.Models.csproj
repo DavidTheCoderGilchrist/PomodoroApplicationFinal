@@ -46,10 +46,10 @@
     <Compile Include="Achievement\AchievementDetail.cs" />
     <Compile Include="Achievement\AchievementEdit.cs" />
     <Compile Include="Achievement\AchievementListItem.cs" />
-    <Compile Include="AssignmentDetail.cs" />
+    <Compile Include="Assignment\AssignmentDetail.cs" />
     <Compile Include="Assignment\AssignmentCreate.cs" />
     <Compile Include="Assignment\AssignmentListItem.cs" />
-    <Compile Include="AssignmentEdit.cs" />
+    <Compile Include="Assignment\AssignmentEdit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reward\RewardCreate.cs" />
     <Compile Include="Reward\RewardDetail.cs" />

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pomodoro.Models
+namespace Pomodoro.Models.Assignment
 {
     public class AssignmentDetail
     {

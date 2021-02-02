@@ -41,7 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAssignmentService.cs" />
+    <Compile Include="IAchievementService.cs" />
+    <Compile Include="IRewardService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pomodoro.Models\Pomodoro.Models.csproj">
+      <Project>{807ff278-9ea9-4a4a-9fc8-4f7c7d248b3c}</Project>
+      <Name>Pomodoro.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

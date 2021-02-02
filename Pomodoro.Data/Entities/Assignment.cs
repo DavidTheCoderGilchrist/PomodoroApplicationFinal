@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pomodoro.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -17,6 +18,9 @@ namespace Pomodoro.Data
         public string AssignmentName { get; set; }
         public string Description { get; set; }
         public int Points{ get; set; }
-                 
+
+        //public virtual ICollection<ScoreKeeper> ScoreKeepers { get; set; } = new List<ScoreKeeper>();
+
+
     }
 }

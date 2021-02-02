@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Pomodoro.Data;
+using Pomodoro.Data.Entities;
 using PomodoroApplicationFinal.Models;
 
 namespace PomodoroApplicationFinal.Controllers
