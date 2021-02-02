@@ -9,10 +9,10 @@ namespace Pomodoro.Contracts
 {
     public interface IAssignmentService
     {
-        //bool CreateAssignment(AssignmentCreate model);
-        //IEnumerable<AssignmentListItem> GetAssignment();
-        //bool UpdateAssignment(AssignmentEdit model);
-        //bool DeleteAssignment(int assignmentId);
-        //AssignmentDetail GetAssignmentById(int id);
+        bool CreateAssignment(AssignmentCreate model);
+        IEnumerable<AssignmentListItem> GetAssignment();
+        bool UpdateAssignment(AssignmentEdit model);
+        bool DeleteAssignment(int assignmentId);
+        AssignmentDetail GetAssignmentById(int id);
     }
 }

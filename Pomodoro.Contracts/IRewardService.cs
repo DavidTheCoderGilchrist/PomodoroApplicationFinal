@@ -9,10 +9,10 @@ namespace Pomodoro.Contracts
 {
     public interface IRewardService
     {
-        //bool CreateReward(RewardCreate model);
-        //IEnumerable<RewardListItem> GetReward();
-        //RewardDetail GetRewardById(int id);
-        //bool UpdateReward(RewardEdit model);
-        //bool DeleteReward(int assignmentId);
+        bool CreateReward(RewardCreate model);
+        IEnumerable<RewardListItem> GetReward();
+        RewardDetail GetRewardById(int id);
+        bool UpdateReward(RewardEdit model);
+        bool DeleteReward(int assignmentId);
     }
 }

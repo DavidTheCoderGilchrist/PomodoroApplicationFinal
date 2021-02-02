@@ -9,10 +9,10 @@ namespace Pomodoro.Contracts
 {
     public interface IAchievementService
     {
-        //bool CreateAchievement(AchievementCreate model);
-        //IEnumerable<AchievementListItem> GetAchievement();
-        //bool UpdateAchievement(AchievementEdit model);
-        //bool DeleteAchievement(int assignmentId);
-        //AchievementDetail GetAchievementById(int id);
+        bool CreateAchievement(AchievementCreate model);
+        IEnumerable<AchievementListItem> GetAchievement();
+        bool UpdateAchievement(AchievementEdit model);
+        bool DeleteAchievement(int assignmentId);
+        AchievementDetail GetAchievementById(int id);
     }
 }
